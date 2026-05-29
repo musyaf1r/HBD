@@ -27,14 +27,8 @@
       <!-- Bingkai foto -->
       <div class="photo-wrap">
         <div class="photo-ring">
-          <!--
-            Foto diambil otomatis dari folder img/.
-            Ganti PHOTO_PATH di js/script.js untuk mengatur nama file foto.
-          -->
           <img id="photoImg" alt="Birthday Person">
         </div>
-
-        <!-- Dekorasi bunga sudut -->
         <div class="photo-deco deco-tl">🌸</div>
         <div class="photo-deco deco-tr">🌺</div>
         <div class="photo-deco deco-bl">🌼</div>
@@ -47,6 +41,34 @@
       <div class="happy-bday">🎂 Happy Birthday! 🎂</div>
       <div class="age-badge" id="ageDisplay">🎉 Hari Spesialmu</div>
     </section>
+
+    <!-- ══════════════════════════════
+         MUSIC PLAYER
+    ══════════════════════════════ -->
+    <div class="music-player" id="musicPlayer">
+      <div class="music-disc" id="musicDisc">
+        <div class="disc-inner">🎵</div>
+      </div>
+      <div class="music-info">
+        <div class="music-title">My Love Mine All Mine</div>
+        <div class="music-artist">Mitski</div>
+        <div class="music-bar">
+          <div class="music-progress" id="musicProgress"></div>
+        </div>
+        <input type="range" id="seekBar" class="seek-bar" min="0" max="100" value="0" step="0.1">
+        <div class="music-time">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+      </div>
+      <button class="music-btn" id="musicBtn" onclick="toggleMusic()">▶</button>
+    </div>
+
+    <!-- audio element — letakkan file lagu di folder yang sama -->
+    <!-- nama file: my-love-mine-all-mine.mp3  (atau sesuaikan di script.js) -->
+    <audio id="bgMusic" loop>
+      <source src="my-love-mine-all-mine.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- ══════════════════════════════
          FLORAL DIVIDER
@@ -64,11 +86,10 @@
     ══════════════════════════════ -->
     <div class="wish-box">
       <p class="wish-text">
-       semoga di tahun ini dan tahun yang akan datang selalu di lancarkan kegiatannya.
+        semoga di tahun ini dan tahun yang akan datang selalu di lancarkan kegiatannya.
         Semoga hidupmu dipenuhi kebahagiaan, kesehatan, dan cinta yang tulus.
-
       </p>
-      <div class="wish-from"> Dengan sepenuh hati 💕</div>
+      <div class="wish-from">Dengan sepenuh hati 💕</div>
     </div>
 
     <!-- ══════════════════════════════
@@ -86,26 +107,18 @@
             <stop offset="100%" stop-color="#f06292"/>
           </radialGradient>
         </defs>
-
-        <!-- Tanah -->
         <rect x="0" y="115" width="390" height="15" fill="#f8bbd0" rx="4"/>
-
-        <!-- Batang -->
         <line x1="50"  y1="115" x2="50"  y2="65" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="120" y1="115" x2="120" y2="50" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="195" y1="115" x2="195" y2="40" stroke="#66bb6a" stroke-width="3"   stroke-linecap="round"/>
         <line x1="270" y1="115" x2="270" y2="50" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="340" y1="115" x2="340" y2="65" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
-
-        <!-- Daun -->
         <ellipse cx="42"  cy="88" rx="12" ry="6" fill="#81c784" transform="rotate(-40 42 88)"/>
         <ellipse cx="58"  cy="95" rx="12" ry="6" fill="#a5d6a7" transform="rotate(40 58 95)"/>
         <ellipse cx="112" cy="80" rx="13" ry="6" fill="#81c784" transform="rotate(-35 112 80)"/>
         <ellipse cx="263" cy="80" rx="13" ry="6" fill="#81c784" transform="rotate(35 263 80)"/>
         <ellipse cx="332" cy="88" rx="12" ry="6" fill="#81c784" transform="rotate(40 332 88)"/>
         <ellipse cx="348" cy="95" rx="12" ry="6" fill="#a5d6a7" transform="rotate(-40 348 95)"/>
-
-        <!-- Bunga 1 (kecil, pink muda) -->
         <circle cx="50" cy="65" r="14" fill="url(#petG2)" opacity="0.9"/>
         <circle cx="35" cy="60" r="8"  fill="#f48fb1" opacity="0.8"/>
         <circle cx="65" cy="60" r="8"  fill="#f48fb1" opacity="0.8"/>
@@ -113,8 +126,6 @@
         <circle cx="50" cy="82" r="8"  fill="#f48fb1" opacity="0.8"/>
         <circle cx="50" cy="65" r="7"  fill="#fff9c4"/>
         <circle cx="50" cy="65" r="3"  fill="#f9a825"/>
-
-        <!-- Bunga 2 (sedang, pink tua) -->
         <circle cx="120" cy="50" r="17" fill="url(#petG)"  opacity="0.9"/>
         <circle cx="102" cy="45" r="10" fill="#e91e8c" opacity="0.75"/>
         <circle cx="138" cy="45" r="10" fill="#e91e8c" opacity="0.75"/>
@@ -124,8 +135,6 @@
         <circle cx="134" cy="63" r="9"  fill="#e91e8c" opacity="0.6"/>
         <circle cx="120" cy="50" r="8"  fill="#fff9c4"/>
         <circle cx="120" cy="50" r="4"  fill="#f9a825"/>
-
-        <!-- Bunga 3 (besar, tengah) -->
         <circle cx="195" cy="40" r="20" fill="url(#petG)"  opacity="0.95"/>
         <circle cx="172" cy="33" r="12" fill="#c2185b" opacity="0.8"/>
         <circle cx="218" cy="33" r="12" fill="#c2185b" opacity="0.8"/>
@@ -135,8 +144,6 @@
         <circle cx="215" cy="58" r="11" fill="#c2185b" opacity="0.65"/>
         <circle cx="195" cy="40" r="10" fill="#fff9c4"/>
         <circle cx="195" cy="40" r="5"  fill="#f57f17"/>
-
-        <!-- Bunga 4 -->
         <circle cx="270" cy="50" r="17" fill="url(#petG2)" opacity="0.9"/>
         <circle cx="252" cy="45" r="10" fill="#f48fb1" opacity="0.75"/>
         <circle cx="288" cy="45" r="10" fill="#f48fb1" opacity="0.75"/>
@@ -146,8 +153,6 @@
         <circle cx="284" cy="63" r="9"  fill="#f48fb1" opacity="0.6"/>
         <circle cx="270" cy="50" r="8"  fill="#fff9c4"/>
         <circle cx="270" cy="50" r="4"  fill="#f9a825"/>
-
-        <!-- Bunga 5 (kecil) -->
         <circle cx="340" cy="65" r="14" fill="url(#petG)"  opacity="0.9"/>
         <circle cx="325" cy="60" r="8"  fill="#e91e8c" opacity="0.8"/>
         <circle cx="355" cy="60" r="8"  fill="#e91e8c" opacity="0.8"/>
@@ -155,14 +160,10 @@
         <circle cx="340" cy="82" r="8"  fill="#e91e8c" opacity="0.8"/>
         <circle cx="340" cy="65" r="7"  fill="#fff9c4"/>
         <circle cx="340" cy="65" r="3"  fill="#f9a825"/>
-
-        <!-- Kupu-kupu -->
         <ellipse cx="160" cy="25" rx="10" ry="5" fill="#f48fb1" opacity="0.7" transform="rotate(-20 160 25)"/>
         <ellipse cx="175" cy="20" rx="8"  ry="4" fill="#e91e8c" opacity="0.6" transform="rotate(20 175 20)"/>
         <ellipse cx="308" cy="28" rx="10" ry="5" fill="#f8bbd0" opacity="0.7" transform="rotate(20 308 28)"/>
         <ellipse cx="320" cy="22" rx="8"  ry="4" fill="#f06292" opacity="0.6" transform="rotate(-20 320 22)"/>
-
-        <!-- Sparkles -->
         <text x="78"  y="30" font-size="12" fill="#f9a825" opacity="0.8">✨</text>
         <text x="235" y="15" font-size="14" fill="#f9a825" opacity="0.9">✨</text>
         <text x="152" y="88" font-size="10" fill="#e91e8c" opacity="0.7">🌸</text>
