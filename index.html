@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Happy Birthday 🌸</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating petals background -->
+  <div class="petals-bg" id="petals"></div>
+
+  <div class="page">
+
+    <!-- ══════════════════════════════
+         HERO — Foto & Ucapan Utama
+    ══════════════════════════════ -->
+    <section class="hero">
+      <span class="flower-crown">🌸 🌺 🌸</span>
+
+      <!-- Bingkai foto -->
+      <div class="photo-wrap">
+        <div class="photo-ring">
+          <!--
+            Foto diambil otomatis dari folder img/.
+            Ganti PHOTO_PATH di js/script.js untuk mengatur nama file foto.
+          -->
+          <img id="photoImg" alt="Birthday Person">
+        </div>
+
+        <!-- Dekorasi bunga sudut -->
+        <div class="photo-deco deco-tl">🌸</div>
+        <div class="photo-deco deco-tr">🌺</div>
+        <div class="photo-deco deco-bl">🌼</div>
+        <div class="photo-deco deco-br">🌹</div>
+      </div>
+
+      <!-- Teks ucapan -->
+      <div class="sub-label">Selamat Ulang Tahun</div>
+      <div class="name-heading" id="nameDisplay">Nama Kamu</div>
+      <div class="happy-bday">🎂 Happy Birthday! 🎂</div>
+      <div class="age-badge" id="ageDisplay">🎉 Hari Spesialmu</div>
+    </section>
+
+    <!-- ══════════════════════════════
+         FLORAL DIVIDER
+    ══════════════════════════════ -->
+    <div class="floral-divider">
+      <span>🌸</span>
+      <div class="divider-line"></div>
+      <span>🌺</span>
+      <div class="divider-line"></div>
+      <span>🌸</span>
+    </div>
+
+    <!-- ══════════════════════════════
+         WISH BOX — Ucapan puitis
+    ══════════════════════════════ -->
+    <div class="wish-box">
+      <p class="wish-text">
+       semoga di tahun ini dan tahun yang akan datang selalu di lancarkan kegiatannya.
+        Semoga hidupmu dipenuhi kebahagiaan, kesehatan, dan cinta yang tulus.
+
+      </p>
+      <div class="wish-from"> Dengan sepenuh hati 💕</div>
+    </div>
+
+    <!-- ══════════════════════════════
+         FLOWER GARDEN (SVG ilustrasi)
+    ══════════════════════════════ -->
+    <div class="flower-garden">
+      <svg class="garden-svg" viewBox="0 0 390 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="petG" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f48fb1"/>
+            <stop offset="100%" stop-color="#e91e8c"/>
+          </radialGradient>
+          <radialGradient id="petG2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fce4ec"/>
+            <stop offset="100%" stop-color="#f06292"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Tanah -->
+        <rect x="0" y="115" width="390" height="15" fill="#f8bbd0" rx="4"/>
+
+        <!-- Batang -->
+        <line x1="50"  y1="115" x2="50"  y2="65" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="120" y1="115" x2="120" y2="50" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="195" y1="115" x2="195" y2="40" stroke="#66bb6a" stroke-width="3"   stroke-linecap="round"/>
+        <line x1="270" y1="115" x2="270" y2="50" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="340" y1="115" x2="340" y2="65" stroke="#66bb6a" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Daun -->
+        <ellipse cx="42"  cy="88" rx="12" ry="6" fill="#81c784" transform="rotate(-40 42 88)"/>
+        <ellipse cx="58"  cy="95" rx="12" ry="6" fill="#a5d6a7" transform="rotate(40 58 95)"/>
+        <ellipse cx="112" cy="80" rx="13" ry="6" fill="#81c784" transform="rotate(-35 112 80)"/>
+        <ellipse cx="263" cy="80" rx="13" ry="6" fill="#81c784" transform="rotate(35 263 80)"/>
+        <ellipse cx="332" cy="88" rx="12" ry="6" fill="#81c784" transform="rotate(40 332 88)"/>
+        <ellipse cx="348" cy="95" rx="12" ry="6" fill="#a5d6a7" transform="rotate(-40 348 95)"/>
+
+        <!-- Bunga 1 (kecil, pink muda) -->
+        <circle cx="50" cy="65" r="14" fill="url(#petG2)" opacity="0.9"/>
+        <circle cx="35" cy="60" r="8"  fill="#f48fb1" opacity="0.8"/>
+        <circle cx="65" cy="60" r="8"  fill="#f48fb1" opacity="0.8"/>
+        <circle cx="50" cy="48" r="8"  fill="#f48fb1" opacity="0.8"/>
+        <circle cx="50" cy="82" r="8"  fill="#f48fb1" opacity="0.8"/>
+        <circle cx="50" cy="65" r="7"  fill="#fff9c4"/>
+        <circle cx="50" cy="65" r="3"  fill="#f9a825"/>
+
+        <!-- Bunga 2 (sedang, pink tua) -->
+        <circle cx="120" cy="50" r="17" fill="url(#petG)"  opacity="0.9"/>
+        <circle cx="102" cy="45" r="10" fill="#e91e8c" opacity="0.75"/>
+        <circle cx="138" cy="45" r="10" fill="#e91e8c" opacity="0.75"/>
+        <circle cx="120" cy="30" r="10" fill="#e91e8c" opacity="0.75"/>
+        <circle cx="120" cy="70" r="10" fill="#e91e8c" opacity="0.75"/>
+        <circle cx="106" cy="63" r="9"  fill="#e91e8c" opacity="0.6"/>
+        <circle cx="134" cy="63" r="9"  fill="#e91e8c" opacity="0.6"/>
+        <circle cx="120" cy="50" r="8"  fill="#fff9c4"/>
+        <circle cx="120" cy="50" r="4"  fill="#f9a825"/>
+
+        <!-- Bunga 3 (besar, tengah) -->
+        <circle cx="195" cy="40" r="20" fill="url(#petG)"  opacity="0.95"/>
+        <circle cx="172" cy="33" r="12" fill="#c2185b" opacity="0.8"/>
+        <circle cx="218" cy="33" r="12" fill="#c2185b" opacity="0.8"/>
+        <circle cx="195" cy="16" r="12" fill="#c2185b" opacity="0.8"/>
+        <circle cx="195" cy="64" r="12" fill="#c2185b" opacity="0.8"/>
+        <circle cx="175" cy="58" r="11" fill="#c2185b" opacity="0.65"/>
+        <circle cx="215" cy="58" r="11" fill="#c2185b" opacity="0.65"/>
+        <circle cx="195" cy="40" r="10" fill="#fff9c4"/>
+        <circle cx="195" cy="40" r="5"  fill="#f57f17"/>
+
+        <!-- Bunga 4 -->
+        <circle cx="270" cy="50" r="17" fill="url(#petG2)" opacity="0.9"/>
+        <circle cx="252" cy="45" r="10" fill="#f48fb1" opacity="0.75"/>
+        <circle cx="288" cy="45" r="10" fill="#f48fb1" opacity="0.75"/>
+        <circle cx="270" cy="30" r="10" fill="#f48fb1" opacity="0.75"/>
+        <circle cx="270" cy="70" r="10" fill="#f48fb1" opacity="0.75"/>
+        <circle cx="256" cy="63" r="9"  fill="#f48fb1" opacity="0.6"/>
+        <circle cx="284" cy="63" r="9"  fill="#f48fb1" opacity="0.6"/>
+        <circle cx="270" cy="50" r="8"  fill="#fff9c4"/>
+        <circle cx="270" cy="50" r="4"  fill="#f9a825"/>
+
+        <!-- Bunga 5 (kecil) -->
+        <circle cx="340" cy="65" r="14" fill="url(#petG)"  opacity="0.9"/>
+        <circle cx="325" cy="60" r="8"  fill="#e91e8c" opacity="0.8"/>
+        <circle cx="355" cy="60" r="8"  fill="#e91e8c" opacity="0.8"/>
+        <circle cx="340" cy="48" r="8"  fill="#e91e8c" opacity="0.8"/>
+        <circle cx="340" cy="82" r="8"  fill="#e91e8c" opacity="0.8"/>
+        <circle cx="340" cy="65" r="7"  fill="#fff9c4"/>
+        <circle cx="340" cy="65" r="3"  fill="#f9a825"/>
+
+        <!-- Kupu-kupu -->
+        <ellipse cx="160" cy="25" rx="10" ry="5" fill="#f48fb1" opacity="0.7" transform="rotate(-20 160 25)"/>
+        <ellipse cx="175" cy="20" rx="8"  ry="4" fill="#e91e8c" opacity="0.6" transform="rotate(20 175 20)"/>
+        <ellipse cx="308" cy="28" rx="10" ry="5" fill="#f8bbd0" opacity="0.7" transform="rotate(20 308 28)"/>
+        <ellipse cx="320" cy="22" rx="8"  ry="4" fill="#f06292" opacity="0.6" transform="rotate(-20 320 22)"/>
+
+        <!-- Sparkles -->
+        <text x="78"  y="30" font-size="12" fill="#f9a825" opacity="0.8">✨</text>
+        <text x="235" y="15" font-size="14" fill="#f9a825" opacity="0.9">✨</text>
+        <text x="152" y="88" font-size="10" fill="#e91e8c" opacity="0.7">🌸</text>
+        <text x="228" y="90" font-size="10" fill="#f48fb1" opacity="0.7">🌺</text>
+      </svg>
+    </div>
+
+    <!-- ══════════════════════════════
+         PESAN SPESIAL — Kartu
+    ══════════════════════════════ -->
+    <div class="section-title">
+      <h2>💌 Pesan Spesial</h2>
+      <p>Sentuh kartu untuk membaca pesannya</p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="msg-card" onclick="openModal('wish')">
+        <span class="card-icon">🎂</span>
+        <div class="card-label">Ucapan Ulang Tahun</div>
+        <div class="card-tap">Sentuh untuk buka</div>
+      </div>
+      <div class="msg-card" onclick="openModal('love')">
+        <span class="card-icon">💕</span>
+        <div class="card-label">Pesan</div>
+        <div class="card-tap">Sentuh untuk buka</div>
+      </div>
+      <div class="msg-card" onclick="openModal('hope')">
+        <span class="card-icon">🌟</span>
+        <div class="card-label">Harapan &amp; Doa</div>
+        <div class="card-tap">Sentuh untuk buka</div>
+      </div>
+      <div class="msg-card" onclick="openModal('flower')">
+        <span class="card-icon">🌺</span>
+        <div class="card-label">Bunga Untukmu</div>
+        <div class="card-tap">Sentuh untuk buka</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-flowers">🌸 🌺 🌹 🌼 🌸</div>
+    <div class="footer-text">from IDK 💗</div>
+
+  </div><!-- /page -->
+
+  <!-- ══════════════════════════════
+       MODAL (bottom sheet)
+  ══════════════════════════════ -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeModalOutside(event)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-icon"  id="modalIcon"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-body"  id="modalBody"></div>
+      <button class="modal-close" onclick="closeModal()">Tutup 🌸</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

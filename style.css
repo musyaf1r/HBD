@@ -1,0 +1,447 @@
+/* ============================================================
+   style.css — Birthday Website
+   Base color: Pink & Floral
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink-deep:   #c2185b;
+  --pink-mid:    #e91e8c;
+  --pink-soft:   #f48fb1;
+  --pink-pale:   #fce4ec;
+  --pink-blush:  #fff0f5;
+  --pink-border: #f8bbd0;
+  --gold:        #d4a853;
+  --cream:       #fffaf9;
+  --text-dark:   #4a1a2c;
+  --text-mid:    #7b3f5e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--cream);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Floating petals ── */
+.petals-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -60px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes fall {
+  0%   { transform: translateY(0)     rotate(0deg)   translateX(0);    opacity: 0.6; }
+  50%  { transform: translateY(50vh)  rotate(180deg) translateX(30px); opacity: 0.3; }
+  100% { transform: translateY(110vh) rotate(360deg) translateX(-20px);opacity: 0;   }
+}
+
+/* ── Main container ── */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+}
+
+/* ══════════════════════════════
+   HERO SECTION
+══════════════════════════════ */
+.hero {
+  background: linear-gradient(170deg, #fff0f5 0%, #fce4ec 50%, #f8bbd0 100%);
+  padding: 50px 24px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, #f48fb150 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50px; right: -30px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, #e91e8c20 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.flower-crown {
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+  display: block;
+  animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50%       { transform: rotate(3deg);  }
+}
+
+/* ── Photo frame ── */
+.photo-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.photo-ring {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--pink-soft);
+  padding: 4px;
+  background: white;
+  box-shadow: 0 8px 32px #e91e8c25;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.photo-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dekorasi bunga di sudut foto */
+.photo-deco {
+  position: absolute;
+  font-size: 22px;
+  animation: floatDeco 2.5s ease-in-out infinite;
+}
+
+.deco-tl { top: -4px;    left: -4px;   animation-delay: 0s;   }
+.deco-tr { top: -4px;    right: -4px;  animation-delay: 0.5s; }
+.deco-bl { bottom: -4px; left: -4px;   animation-delay: 1s;   }
+.deco-br { bottom: -4px; right: -4px;  animation-delay: 1.5s; }
+
+@keyframes floatDeco {
+  0%, 100% { transform: translateY(0)   scale(1);   }
+  50%       { transform: translateY(-6px) scale(1.1); }
+}
+
+/* ── Teks ucapan ── */
+.sub-label {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.name-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.happy-bday {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--pink-mid);
+  margin-bottom: 20px;
+}
+
+.age-badge {
+  display: inline-block;
+  background: var(--pink-deep);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px #c2185b40;
+  margin-bottom: 8px;
+}
+
+/* ══════════════════════════════
+   FLORAL DIVIDER
+══════════════════════════════ */
+.floral-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 24px 10px;
+}
+
+.floral-divider span { font-size: 20px; }
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pink-soft), transparent);
+}
+
+/* ══════════════════════════════
+   WISH BOX (ucapan utama)
+══════════════════════════════ */
+.wish-box {
+  margin: 8px 20px 0;
+  background: white;
+  border: 1.5px solid var(--pink-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px #f48fb115;
+  position: relative;
+}
+
+.wish-box::before {
+  content: '\275D';
+  position: absolute;
+  top: -14px; left: 20px;
+  font-size: 36px;
+  color: var(--pink-soft);
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+}
+
+.wish-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+.wish-from {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--pink-deep);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════
+   FLOWER GARDEN SVG
+══════════════════════════════ */
+.flower-garden {
+  padding: 24px 20px 8px;
+  text-align: center;
+}
+
+.garden-svg {
+  width: 100%;
+  max-width: 390px;
+}
+
+/* ══════════════════════════════
+   SECTION TITLE
+══════════════════════════════ */
+.section-title {
+  text-align: center;
+  padding: 16px 20px 4px;
+}
+
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.section-title p {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+/* ══════════════════════════════
+   MESSAGE CARDS
+══════════════════════════════ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 14px 20px 0;
+}
+
+.msg-card {
+  background: white;
+  border: 1.5px solid var(--pink-border);
+  border-radius: 18px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.msg-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--pink-blush), transparent);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.msg-card:hover,
+.msg-card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px #f48fb130;
+}
+
+.msg-card:hover::before { opacity: 1; }
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.card-tap {
+  font-size: 10px;
+  color: var(--pink-soft);
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════
+   MODAL (bottom sheet)
+══════════════════════════════ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #4a1a2c99;
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-sheet {
+  background: var(--cream);
+  border-radius: 28px 28px 0 0;
+  padding: 20px 24px 40px;
+  width: 100%;
+  max-width: 430px;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform .35s cubic-bezier(.32,.72,0,1);
+}
+
+.modal-backdrop.open .modal-sheet {
+  transform: translateY(0);
+}
+
+.modal-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--pink-border);
+  border-radius: 4px;
+  margin: 0 auto 20px;
+}
+
+.modal-icon {
+  font-size: 44px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.modal-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  text-align: center;
+}
+
+.modal-close {
+  display: block;
+  margin: 24px auto 0;
+  background: var(--pink-deep);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px #c2185b40;
+  transition: transform .15s;
+}
+
+.modal-close:hover { transform: scale(1.03); }
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+.footer-flowers {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 6px;
+  padding: 30px 20px 10px;
+  color: var(--pink-soft);
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 12px;
+  color: var(--pink-soft);
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
