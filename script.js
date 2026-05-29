@@ -16,7 +16,7 @@ const MESSAGES = {
     icon : '🎂',
     title: 'Selamat Ulang Tahun!',
     body :
-      'selamat ulang tahun ke 17, Semoga di hari ulang tahunmu ini ' +
+      'selamat ulang tahun ke 16, Semoga di hari ulang tahunmu ini ' +
       'membawa senyuman manis, tawa, dan kebahagiaan yang tiada habisnya.\n\n' +
       'semoga kamu bisa menjadi pribadi yang lebih baik. Semoga tahun ini jauh lebih baik ' +
       'dari tahun sebelumnya. Kamu layak mendapat yang terbaik yang ada di dunia ini! 🎉🎂🎊',
